@@ -5,32 +5,30 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --hot",
-    "build": "NODE_ENV=production webpack -p --config webpack.config.js"
+    "start": "gulp watch",
+    "build": "NODE_ENV=production gulp build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/igor-sobolev/MintBubbles.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Igor Sobolev",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/igor-sobolev/MintBubbles/issues"
   },
   "homepage": "https://github.com/igor-sobolev/MintBubbles#readme",
   "devDependencies": {
-    "webpack": "x",
-    "webpack-dev-server": "x",
-    "babel-loader": "x",
-    "babel-core": "x",
-    "babel-preset-es2015": "x",
-    "css-loader": "x",
-    "style-loader": "x",
-    "stylus-loader": "x",
-    "json-loader": "x",
-    "html-webpack-plugin": "x",
-    "html-loader": "x"
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-stylus": "^2.6.0",
+    "gulp-uglify": "^3.0.0"
   },
   "dependencies": {
     "lodash": "x"
