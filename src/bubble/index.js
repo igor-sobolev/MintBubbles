@@ -1,32 +1,25 @@
-import svg from './bubble.svg';
-
-class Bubble extends HTMLButtonElement {
+class Bubble extends HTMLElement {
 
   constructor() {
     super();
-    this.cheburek = 'AAAAAAAAAAA!';
+    //this.cheburek = 'AAAAAAAAAAA!';
+    //this.innerHTML = '<img src="bubble.svg">';
   }
 
   connectedCallback() {
-    this.innerHTML = svg + `lol kek {cheburek}`;
     this.addEventListener('click', () => alert('The button had been clicked'));
   }
 
-  disconnectedCallback() {
+  // set cheburek(prop) {
+  //   this.cheburek = prop;
+  // }
 
-  }
-
-  set cheburek(prop) {
-    this.cheburek = prop;
-  }
-
-  get cheburek() {
-    return this.cheburek;
-  }
+  // get cheburek() {
+  //   return this.cheburek;
+  // }
 }
 
-document.registerElement('bubble', Bubble);
+document.registerElement('m-bubble', Bubble);
 
-var bubble = new Bubble();
-bubble.properties = { text: 'Loaded from JavaScript' };
+let bubble = new Bubble();
 document.querySelector('body').appendChild(bubble);

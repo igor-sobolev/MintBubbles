@@ -5,6 +5,7 @@ const uglify = require('gulp-uglify');
 const babel = require('gulp-babel');
 const rename = require('gulp-rename');
 const del = require('del');
+const gulpBrowser = require('gulp-browser');
 
 gulp.task('clean', function () {
   return del(['build']);
@@ -13,8 +14,11 @@ gulp.task('clean', function () {
 gulp.task('js', ['clean'], function () {
   return gulp.src('./src/**/*.js')
     .pipe(babel({
-      presets: ['env']
+      presets: ['es2015'],
+      plugins: ['transform-custom-element-classes',
+        'transform-es2015-classes']
     }))
+    .pipe(gulpBrowser.browserify())
     .pipe(concat('bundle.js'))
     .pipe(uglify())
     .pipe(rename({ suffix: '.min' }))
